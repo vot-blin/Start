@@ -1,10 +1,20 @@
 <template>
   <div class="page">
-    <h1>Профиль</h1>
-    <div class="card">
-      <p><strong>Имя:</strong> {{ auth.user?.name }}</p>
-      <p><strong>Email:</strong> {{ auth.user?.email }}</p>
-      <button @click="logout">Выйти</button>
+    <div class="section-box profile-card">
+      <h1 class="page-title">Профиль</h1>
+
+      <div class="fields">
+        <div class="field">
+          <span class="field-label">Имя</span>
+          <span class="field-value">{{ auth.user?.name }}</span>
+        </div>
+        <div class="field">
+          <span class="field-label">Email</span>
+          <span class="field-value">{{ auth.user?.email }}</span>
+        </div>
+      </div>
+
+      <button class="button-danger logout-btn" @click="logout">Выйти из аккаунта</button>
     </div>
   </div>
 </template>
@@ -28,24 +38,36 @@ function logout() {
   margin: 40px auto 0;
 }
 
-.form {
+.profile-card {
+  padding: 28px;
   display: grid;
-  gap: 12px;
+  gap: 24px;
 }
 
-.form label {
+.fields {
   display: grid;
-  gap: 6px;
-  color: #3a3550;
-  font-weight: 500;
+  gap: 14px;
 }
 
-.text {
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.08);
+}
+
+.field-label {
+  font-size: 14px;
   color: #6e6782;
-  margin-bottom: 14px;
 }
 
-.links {
-  margin-top: 14px;
+.field-value {
+  font-weight: 600;
+  color: #1f1b2e;
+}
+
+.logout-btn {
+  width: fit-content;
 }
 </style>

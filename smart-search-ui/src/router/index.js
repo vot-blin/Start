@@ -11,7 +11,7 @@ import AiSearchView from '@/views/AiSearchView.vue'
 
 const routes = [
     { path: '/', name: 'home', component: HomeView},
-    { path: '/prodcut/:id', name: 'product', component: ProductView, props: true },
+    { path: '/product/:id', name: 'product', component: ProductView, props: true },
     { path: '/cart', name: 'cart', component: CartView},
     { path: '/login', name: 'login', component: LoginView},
     { path: '/register', name: 'register', component: RegisterView},

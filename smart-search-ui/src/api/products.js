@@ -1,13 +1,16 @@
 import http from './http'
 
 export const productsApi = {
-  getAll() {
-    return http.get('/products')
+  getAll(page = 1, pageSize = 100) {
+    return http.get('/products', { params: { page, pageSize } })
   },
   getById(id) {
     return http.get(`/products/${id}`)
   },
-  search(q) {
-    return http.get('/products/search', { params: { q } })
+  search(q, { category, minPrice, maxPrice } = {}) {
+    return http.get('/products/search', { params: { q, category, minPrice, maxPrice } })
+  },
+  getCategories() {
+    return http.get('/products/categories')
   },
 }
